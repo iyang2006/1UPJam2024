@@ -5,10 +5,12 @@ using UnityEngine;
 public class DoorBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform targetTrans;
+    [SerializeField] private int targetRoom;
+    private CamSwitcher camSwitch;
     // Start is called before the first frame update
     void Start()
     {
-        
+        camSwitch = GameObject.FindWithTag("CameraSwitcher").GetComponent<CamSwitcher>();
     }
 
     // Update is called once per frame
@@ -21,5 +23,6 @@ public class DoorBehaviour : MonoBehaviour
         if (col.gameObject.tag == "Player") {
             col.gameObject.transform.position = targetTrans.position;
         }
+        camSwitch.SwitchRoom(targetRoom);
     }
 }
