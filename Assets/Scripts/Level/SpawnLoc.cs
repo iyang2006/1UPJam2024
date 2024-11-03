@@ -6,6 +6,7 @@ public class SpawnLoc : MonoBehaviour
 {
     [SerializeField] private int roomID = 0;
     [SerializeField] private Transform spawnTrans;
+    [SerializeField] private bool isNear;
     private int ourID = 0;
     private SpawnManager spawnParent;
     private CamSwitcher camSwitch;
@@ -24,7 +25,12 @@ public class SpawnLoc : MonoBehaviour
         spawnParent.SetSpawnLoc(ourID);
     }
 
+    public bool IsNear() {
+        return isNear;
+    }
+
     public void SpawnPlayer(GameObject player) {
+        Debug.Log(spawnTrans.position);
         player.transform.position = spawnTrans.position;
         camSwitch.SwitchRoom(roomID);
     }
