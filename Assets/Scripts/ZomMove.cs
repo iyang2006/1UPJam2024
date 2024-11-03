@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class ZomMove : MonoBehaviour
@@ -10,16 +12,19 @@ public class ZomMove : MonoBehaviour
     [SerializeField] private float pointX2;
     [SerializeField] private float speed;
     [SerializeField] private float turnSpeed;
+    public AudioClip[] ZombieGrunts;
+    private AudioSource Zombie;
     private bool toX1 = false;
     private bool turning = false;
     private int dir;
     private float angle = 0;
     private Rigidbody rb;
-    
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         dir = GetDirection(pointX2);
+        StartCoroutine(ZombieSounds());
     }
 
     void Update()
@@ -82,6 +87,7 @@ public class ZomMove : MonoBehaviour
         }
     }
 
+
     private int GetDirection(float toPoint)
     {
         if (transform.position.x - toPoint > 0)
@@ -89,5 +95,17 @@ public class ZomMove : MonoBehaviour
             return -1;
         }
         return 1;
+    }
+    private IEnumerator ZombieSounds()
+    {
+        while (true)
+        {
+
+
+            Zombie = GetComponent<AudioSource>();
+            Zombie.clip = ZombieGrunts[Random.Range(0, ZombieGrunts.Length)];
+            Zombie.PlayOneShot(Zombie.clip);
+            yield return new WaitForSeconds(Random.Range(7f, 12f));
+        }
     }
 }

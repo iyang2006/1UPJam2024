@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class ZJump : MonoBehaviour
@@ -73,6 +74,21 @@ public class ZJump : MonoBehaviour
         }
     }
 
+    public void SetNear() {
+        if (!isNear) {
+            this.zJump();
+        }
+    }
+
+    public void SetFar() {
+        if (isNear) {
+            this.zJump();
+        }
+    }
+
+    public bool IsNear() {
+        return isNear;
+    }
 
     public void zJump()
     {
