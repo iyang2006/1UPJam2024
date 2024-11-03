@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,7 @@ public class PlayerMove : MonoBehaviour
         float displacement = moveAction.ReadValue<float>();
         if (displacement != 0)
         {
+            //Debug.Log("MOVE");
             sideVelocity += displacement * sideAccel * Time.deltaTime;
             if (Mathf.Abs(sideVelocity) > sideTopSpeed)
             {
@@ -48,6 +50,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
+            //Debug.Log("No MOVE");
             sideVelocity = 0;
             //float newX = Mathf.SmoothDamp(transform.position.x, targetPos,
             //            ref sideVelocity, stopTime);
