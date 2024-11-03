@@ -19,7 +19,7 @@ public class DoorBehaviour : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D col) {
+    private void OnTriggerEnter(Collider col) {
         if (col.gameObject.tag == "Player") {
             col.gameObject.transform.position = targetTrans.position;
         }

@@ -10,7 +10,7 @@ public class SpawnSetter : MonoBehaviour
         spawnLocParent = this.GetComponentInParent<SpawnLoc>();
     }
 
-    private void OnTriggerEnter2D(Collider2D col) {
+    private void OnTriggerEnter(Collider col) {
         if (col.gameObject.tag == "Player") {
             spawnLocParent.SetThisLoc();
         }

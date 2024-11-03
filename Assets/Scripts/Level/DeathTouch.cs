@@ -12,7 +12,7 @@ public class DeathTouch : MonoBehaviour
         spawnManage = GameObject.FindWithTag("SpawnManager").GetComponent<SpawnManager>();
     }
 
-    private void OnCollisionEnter2D(Collision2D colsn) {
+    private void OnCollisionEnter(Collision colsn) {
         GameObject colObj = colsn.gameObject;
         if (colObj.tag == "Player") {
             spawnManage.RespawnPlayer();
