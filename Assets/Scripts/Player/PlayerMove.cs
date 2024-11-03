@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float sideTopSpeed;
     [SerializeField] private float jumpHeight;
     [SerializeField] private GameObject playerCollide;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator animator;
     private bool switchDir = false;
     private Rigidbody rb;
     private InputAction moveAction;
@@ -24,6 +26,10 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         SideMovement();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            animator.SetTrigger("ZJump");
+        }
     }
 
     public void OnJump()
@@ -35,6 +41,7 @@ public class PlayerMove : MonoBehaviour
         {
             Vector3 newVector = new Vector3(rb.velocity.x, jumpHeight, 0);
             rb.velocity = newVector;
+            //What the fuck is happening unity?
         }
     }
 
@@ -54,7 +61,9 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = newVelocity;
             switchDir = false;
 
-        // If there is no input for left or right, decelerate the player
+            spriteRenderer.flipX = (displacement < 0f);
+
+            // If there is no input for left or right, decelerate the player
         } else
         {
             if (!switchDir && (rb.velocity.x != 0))
@@ -71,5 +80,11 @@ public class PlayerMove : MonoBehaviour
                 rb.velocity = newVelocity;
             }
         }
+
+        animator.SetFloat("HorizontalSpeed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("VerticalVelocity", rb.velocity.y);
+        animator.SetBool("IsOnGround", playerCollide.GetComponent<PlayerTrigger>().canJump);
+        animator.SetBool("IsMoving", (displacement != 0f));
+        animator.SetBool("IsSliding", ((displacement > 0f && rb.velocity.x < 0f) || (displacement < 0f && rb.velocity.x > 0f)));
     }
 }

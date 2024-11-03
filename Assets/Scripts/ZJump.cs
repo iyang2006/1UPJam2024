@@ -13,9 +13,14 @@ public class ZJump : MonoBehaviour
     [SerializeField] private float alphaLow = 0.3f;
     [SerializeField] private float alphaFadeTime = 0.3f;
     [SerializeField] private float alphaFadeTickRate = 0.025f;
+    [SerializeField] private Color interruptingObjectColor;
+    [SerializeField] private float interruptingObjectFadeTime = 0.5f;
     private Transform player;
     private bool isNear;
     private bool canZJump = false;
+    public List<GameObject> interruptingObjects;
+    public bool jumpInterrupted = false;
+    private List<GameObject> stashedInterruptingObjects;
 
     public List<SpriteRenderer> farRenderers;
     public List<SpriteRenderer> nearRenderers;
@@ -49,6 +54,7 @@ public class ZJump : MonoBehaviour
         isNear = startNear;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         setSpriteAlphas(1f);
+        interruptingObjects = new List<GameObject>();
         canZJump = true;
     }
 
@@ -72,6 +78,12 @@ public class ZJump : MonoBehaviour
     {
         if (!canZJump) return;
 
+        if (jumpInterrupted)
+        {
+            StartCoroutine(fadeInterruptingSpriteColors());
+            return;
+        }
+
         if (isNear)
         {
             //JumpFar
@@ -85,6 +97,7 @@ public class ZJump : MonoBehaviour
         }
         StartCoroutine(fadeSpriteAlphas());
     }
+
 
 
     public void setSpriteAlphas(float fadePercentage)
@@ -102,6 +115,7 @@ public class ZJump : MonoBehaviour
     }
 
 
+
     private IEnumerator fadeSpriteAlphas()
     {
         canZJump = false;
@@ -110,6 +124,42 @@ public class ZJump : MonoBehaviour
             setSpriteAlphas((alphaFadeTickRate / alphaFadeTime) * i);
             yield return new WaitForSeconds(alphaFadeTickRate);
         }
+        canZJump = true;
+    }
+
+
+
+
+
+    private void setInterruptingSpriteColors(float fadePercentage)
+    {
+        float redFadeAmount = 1f - ((1f - interruptingObjectColor.r) * fadePercentage);
+        float greenFadeAmount = 1f - ((1f - interruptingObjectColor.g) * fadePercentage);
+        float blueFadeAmount = 1f - ((1f - interruptingObjectColor.b) * fadePercentage);
+        foreach (GameObject interruptingObject in stashedInterruptingObjects)
+        {
+            SpriteRenderer renderer = interruptingObject.GetComponent<SpriteRenderer>();
+            if (renderer == null) continue;
+            renderer.color = new Color(redFadeAmount, greenFadeAmount, blueFadeAmount, renderer.color.a);
+        }
+    }
+
+
+
+    private IEnumerator fadeInterruptingSpriteColors()
+    {
+        canZJump = false;
+        stashedInterruptingObjects = new List<GameObject>();
+        foreach(GameObject interruptingObject in interruptingObjects)
+        {
+            stashedInterruptingObjects.Add(interruptingObject);
+        }
+        for (int i = 0; i <= interruptingObjectFadeTime / alphaFadeTickRate; i++)
+        {
+            setInterruptingSpriteColors(1f - ((alphaFadeTickRate / interruptingObjectFadeTime) * i));
+            yield return new WaitForSeconds(alphaFadeTickRate);
+        }
+        setInterruptingSpriteColors(0f);
         canZJump = true;
     }
 }
