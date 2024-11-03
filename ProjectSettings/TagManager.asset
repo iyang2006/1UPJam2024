@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CameraSwitcher
   - CameraHolder
+  - SpawnManager
   layers:
   - Default
   - TransparentFX
