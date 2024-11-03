@@ -34,9 +34,7 @@ public class PlayerMove : MonoBehaviour
 
     public void OnJump()
     {
-        Debug.Log("jumped");
         bool canJump = playerCollide.GetComponent<PlayerTrigger>().canJump;
-        Debug.Log(canJump);
         if (canJump)
         {
             Vector3 newVector = new Vector3(rb.velocity.x, jumpHeight, 0);
