@@ -437,6 +437,8 @@ MonoBehaviour:
   playerCollide: {fileID: 7630307086584056840}
   spriteRenderer: {fileID: 6459052358178941154}
   animator: {fileID: 6810999290059790096}
+  Bunny: {fileID: 0}
+  JumpClip: {fileID: 0}
 --- !u!114 &2511970351323112574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,8 +537,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 1dd306081c55245469ce5ef7a47ef0ac, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
