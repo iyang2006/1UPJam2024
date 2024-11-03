@@ -37,7 +37,6 @@ public class SpoutBehaviour : MonoBehaviour
     void FixedUpdate() 
     {
         if (pushingPlayer) {
-            Debug.Log("push!");
             Vector2 vel = playerBody.velocity;
             vel.y += Time.fixedDeltaTime * pushStrength * 1;
             playerBody.velocity = vel;
