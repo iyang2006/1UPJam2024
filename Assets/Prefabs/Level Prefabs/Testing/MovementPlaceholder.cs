@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementPlaceholder : MonoBehaviour
 {
     [SerializeField] private Transform thisTransform;
-    [SerializeField] private Rigidbody2D thisBody;
+    [SerializeField] private Rigidbody thisBody;
     [SerializeField] private float speed;
 
     // Start is called before the first frame update
