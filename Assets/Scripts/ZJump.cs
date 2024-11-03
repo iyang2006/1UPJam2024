@@ -106,10 +106,12 @@ public class ZJump : MonoBehaviour
         float lowFadeAmount = alphaHigh - ((alphaHigh - alphaLow) * fadePercentage);
         foreach (SpriteRenderer renderer in nearRenderers)
         {
+            if (renderer == null) continue;
             renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, ((isNear) ? highFadeAmount : lowFadeAmount));
         }
         foreach (SpriteRenderer renderer in farRenderers)
         {
+            if (renderer == null) continue;
             renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, ((!isNear) ? highFadeAmount : lowFadeAmount));
         }
     }
