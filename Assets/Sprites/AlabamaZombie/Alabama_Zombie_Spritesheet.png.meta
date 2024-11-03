@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Alabama_Zombie_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 93
+        width: 167
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2c43a94aeccc649a5596bfd919b2ee
+      internalID: 621880134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alabama_Zombie_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 108
+        width: 199
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99cc35f019c186c4da047f0c0e207a49
+      internalID: -1224760011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alabama_Zombie_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 93
+        width: 169
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265d946b83a06cb42ad315903fbee4cf
+      internalID: -2083720469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alabama_Zombie_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 118
+        width: 160
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e7a93f208b1c143b4ca69f167b5f7a
+      internalID: -1090129198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +190,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Alabama_Zombie_Spritesheet_0: 621880134
+      Alabama_Zombie_Spritesheet_1: -1224760011
+      Alabama_Zombie_Spritesheet_2: -2083720469
+      Alabama_Zombie_Spritesheet_3: -1090129198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

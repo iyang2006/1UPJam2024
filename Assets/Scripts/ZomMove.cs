@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ZomMove : MonoBehaviour
 {
+    public Animator animator;
     [SerializeField] private float pointX1;
     [SerializeField] private float pointX2;
     [SerializeField] private float speed;
@@ -27,6 +28,7 @@ public class ZomMove : MonoBehaviour
         {
             if (!turning)
             {
+                animator.SetFloat("Speed", 1);
                 dir = GetDirection(pointX2);
                 rb.velocity = new Vector3(dir * speed, 0, 0);
                 if (Mathf.Abs(transform.position.x - pointX2) < 0.3)
@@ -37,6 +39,7 @@ public class ZomMove : MonoBehaviour
             }
             else
             {
+                animator.SetFloat("Speed", 0);
                 float angleChange = turnSpeed * Time.deltaTime;
                 angle += angleChange;
                 if (angle >= 180)
@@ -53,6 +56,7 @@ public class ZomMove : MonoBehaviour
         {
             if (!turning)
             {
+                animator.SetFloat("Speed", 1);
                 dir = GetDirection(pointX1);
                 rb.velocity = new Vector3(dir * speed, 0, 0);
                 if (Mathf.Abs(transform.position.x - pointX1) < 0.3)
@@ -63,6 +67,7 @@ public class ZomMove : MonoBehaviour
             }
             else
             {
+                animator.SetFloat("Speed", 0);
                 float angleChange = turnSpeed * Time.deltaTime;
                 angle += angleChange;
                 if (angle >= 180)
