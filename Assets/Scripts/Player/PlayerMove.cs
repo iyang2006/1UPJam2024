@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     private bool switchDir = false;
     private Rigidbody rb;
     private InputAction moveAction;
+    public AudioSource Bunny;
+    public AudioClip JumpClip;
 
     private void Start()
     {
@@ -37,6 +39,8 @@ public class PlayerMove : MonoBehaviour
         bool canJump = playerCollide.GetComponent<PlayerTrigger>().canJump;
         if (canJump)
         {
+            Bunny = GetComponent<AudioSource>();
+            Bunny.Play();
             Vector3 newVector = new Vector3(rb.velocity.x, jumpHeight, 0);
             rb.velocity = newVector;
             //What the fuck is happening unity?
