@@ -8,7 +8,8 @@ public class PlayerTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        canJump = true;
+        if (!other.isTrigger) canJump = true;
+        //canJump = !other.isTrigger;
     }
 
     private void OnTriggerExit(Collider other)
