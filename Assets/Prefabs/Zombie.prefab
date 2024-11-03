@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6390188062251525159}
   - component: {fileID: 4212070732723641069}
   - component: {fileID: 8259218680979957560}
+  - component: {fileID: 8005729709222213820}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -127,10 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efb846df00c8e0499f79956dbf65b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 8005729709222213820}
   pointX1: -5
   pointX2: 0
   speed: 2
-  turnSpeed: 45
+  turnSpeed: 100
 --- !u!65 &4212070732723641069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -164,3 +166,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc3dedc420226c488a42ff053589032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8005729709222213820
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705020390348101034}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e83713df5aec44418d46bdeb5f1d655, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
