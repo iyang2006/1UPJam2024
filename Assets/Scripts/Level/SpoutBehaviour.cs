@@ -11,7 +11,7 @@ public class SpoutBehaviour : MonoBehaviour
     private Rigidbody2D playerBody;
     private bool active;
     private bool pushingPlayer;
-    public bool debug = false;
+    public bool debugActivate = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,8 @@ public class SpoutBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (debug) {
-            debug = false;
+        if (debugActivate) {
+            debugActivate = false;
             SetSpoutActive(!active);
         }
     }
@@ -37,7 +37,8 @@ public class SpoutBehaviour : MonoBehaviour
     void FixedUpdate() 
     {
         if (pushingPlayer) {
-            Vector3 vel = playerBody.velocity;
+            Debug.Log("push!");
+            Vector2 vel = playerBody.velocity;
             vel.y += Time.fixedDeltaTime * pushStrength * 1;
             playerBody.velocity = vel;
         }
@@ -57,6 +58,7 @@ public class SpoutBehaviour : MonoBehaviour
 
     public void SetSpoutActive(bool enbl) {
         thisRend.enabled = enbl;
+        thisBox.enabled = enbl;
         active = enbl;
         if (enbl == false) {
             pushingPlayer = false;
