@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     public float sideTopSpeed;
     public float stopDistance;
     public float stopTime;
-    public Vector3 velocity;
+    public Vector3 verticalVelocity;
 
     private float sideVelocity;
     private float targetPos;
