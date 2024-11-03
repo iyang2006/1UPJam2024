@@ -21,7 +21,7 @@ public class ZJumpChecker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "StaticSprite" || other.gameObject.GetComponent<SpriteRenderer>() == null) return;
+        if (other.gameObject.tag == "StaticSprite" || other.gameObject.GetComponent<SpriteRenderer>() == null || other.isTrigger) return;
         zJump.interruptingObjects.Add(other.gameObject);
         zJump.jumpInterrupted = true;
     }

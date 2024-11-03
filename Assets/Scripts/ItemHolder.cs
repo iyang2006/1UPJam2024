@@ -19,13 +19,14 @@ public class ItemHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q)) {
+        /*if (Input.GetKey(KeyCode.Q)) {
             dropItem();
-        }
+        }*/
     }
 
     public void startHoldingItem(itemName item)
     {
+        dropItem();
         activeItem = item;
         updateItemSprites();
         //rocketSprite.enabled = (activeItem == itemName.ROCKET);
