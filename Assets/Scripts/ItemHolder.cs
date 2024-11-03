@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemHolder : MonoBehaviour
 {
-    private itemName activeItem = itemName.NULL;
+    public itemName activeItem = itemName.NULL;
     [SerializeField] private GameObject rocketItem;
     [SerializeField] private SpriteRenderer rocketSprite;
     [SerializeField] private GameObject brickItem;
@@ -46,6 +46,12 @@ public class ItemHolder : MonoBehaviour
                 Instantiate(brickItem, gameObject.transform.position, new Quaternion(0f, 0f, 0f, 0f));
                 break;
         }
+        activeItem = itemName.NULL;
+        updateItemSprites();
+    }
+
+    public void useItem()
+    {
         activeItem = itemName.NULL;
         updateItemSprites();
     }

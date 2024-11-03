@@ -20,9 +20,10 @@ public class DoorBehaviour : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider col) {
-        if (col.gameObject.tag == "Player") {
+        if (col.gameObject.tag == "Player" && !col.isTrigger) {
             col.gameObject.transform.position = targetTrans.position;
+            camSwitch.SwitchRoom(targetRoom);
         }
-        camSwitch.SwitchRoom(targetRoom);
+        //camSwitch.SwitchRoom(targetRoom);
     }
 }
