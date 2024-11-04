@@ -8,6 +8,7 @@ public class SpawnManager : MonoBehaviour
     private SpawnLoc[] spawnLocas;
     private GameObject player;
     private int spawnID = 0;
+    private ZJump zJumper;
     void Start()
     {
         spawnLocas = this.GetComponentsInChildren<SpawnLoc>();
@@ -15,6 +16,7 @@ public class SpawnManager : MonoBehaviour
             spawnLocas[i].SetID(i);
         }
         player = GameObject.FindWithTag("Player");
+        zJumper = GameObject.FindWithTag("ZJumpHandler").GetComponent<ZJump>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,12 @@ public class SpawnManager : MonoBehaviour
     }
 
     public void RespawnPlayer() {
+        if (spawnLocas[spawnID].IsNear()) {
+            zJumper.SetNear();
+        }
+        else {
+            zJumper.SetFar();
+        }
         spawnLocas[spawnID].SpawnPlayer(player);
     }
 
