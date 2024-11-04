@@ -12,17 +12,17 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: My project
+  companyName: SIGGD 1UP Game Jam
+  productName: Daisy's Adventure
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 1, g: 0.6229727, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
-  m_SplashScreenAnimation: 1
+  m_SplashScreenAnimation: 0
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -39,7 +39,25 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 7a9e778e48a8b2e43b0ed0dac8434f43, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: a50096c8417dc3a4897ec3f937df0300, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: a39f35b1bf5e44648a795b49b51f1a36, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 30aa0ff05fb1ab54dadf63ec47fb2609, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 580c1a0b169bb194fa93ca2ea24786b5, type: 3}
+    duration: 2
+  - logo: {fileID: 1881544497, guid: c1f4d416a5dc2964d935dbfbbc473fb0, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: f722c1e3ad4d70345ab08c32c4d55f39, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: d88aeb4315cf30343bf9ee2fd285d6db, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -160,7 +178,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.SIGGD-1UP-Game-Jam.Daisy-s-Adventure
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -282,7 +301,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 30aa0ff05fb1ab54dadf63ec47fb2609, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
