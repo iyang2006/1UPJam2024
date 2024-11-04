@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 847012782}
   m_Layer: 0
-  m_Name: CamHOlder
+  m_Name: CamHolder
   m_TagString: CameraHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
