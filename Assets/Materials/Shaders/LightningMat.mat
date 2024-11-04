@@ -59,7 +59,7 @@ Material:
     - _LightContrast: 50
     - _LightLerp: 0
     - _LightOffset: -0.1
-    - _NightSaturation: 1
+    - _NightSaturation: 0.5
     - _Saturation: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
