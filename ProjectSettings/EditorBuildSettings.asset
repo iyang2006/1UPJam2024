@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: 3070e3f2cddb6a74d99a9be31b5a572d
+  - enabled: 1
+    path: Assets/Scenes/Oppisite Scene.unity
+    guid: 9e0374a86ab53e44faa05ea3aa133c8f
   m_configObjects: {}
